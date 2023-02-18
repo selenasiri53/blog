@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for post in object_list %}
+<div class="post-entry">
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.body }}</p>
+</div>
+{% endfor %}
+{% endblock content %}
+
+<!-- object_list comes from ListView (imported in views.py) -->
+
+<!-- Adding the link to post_detail allows them to be accessed when we click {{ post.title }} -->
+<!-- Run the server and test each title -->

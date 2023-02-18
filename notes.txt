@@ -1,0 +1,47 @@
+Setup project
+
+Add app to INSTALLED_APPS
+
+Create model for Post class, with a title author and body (and takes the input as its displayed name)
+
+Make a new migration record for it / migrate the change into our DB
+(blog)
+$ python manage.py makemigrations blog
+$ python manage.py migrate blog
+
+$ python manage.py createsuperuser
+username: will
+email: will@learndjango.com
+password: will
+
+Add model Post to admin.py
+
+Database model is complete!
+______________________________________________________
+
+views, URLs, and templates
+
+config/urls.py => directs to blog.urls for routing instructions
+
+blog/views.py:
+-import ListView and DB model Post
+-subclass ListView and add links to model and template
+
+Templates - base.html, home.html 
+(update config/settings.py)
+
+Blog homepage with 2 posts is working! But looks terrible
+______________________________________________________
+
+CSS:
+$ mkdir static
+
+Add to config/settings.py:
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))] # new
+
+
+
+
+
+
