@@ -6,12 +6,6 @@
     <p>{{ post.body }}</p>
 </div>
 
+<a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a>
+
 {% endblock content %}
-<!-- 'post' is imported from .models in views.py - allows us to display 'title' and 'body' from the context object -->
-<!-- Can also write as: -->
-
-<!-- {{ object.title }} -->
-<!-- {{ object.body }} -->
-
-<!-- or: -->
-<!-- customizable names for the context object (research)  -->
