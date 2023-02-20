@@ -1,5 +1,8 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView # new
+from django.views.generic.edit import CreateView, UpdateView, DeleteView # new
+
+from django.urls import reverse_lazy # new
+
 from .models import Post
 
 class BlogListView(ListView):
@@ -19,3 +22,8 @@ class BlogUpdateView(UpdateView): # new
     model = Post
     template_name = 'post_edit.html'
     fields = ['title', 'body']
+
+class BlogDeleteView(DeleteView): # new
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
